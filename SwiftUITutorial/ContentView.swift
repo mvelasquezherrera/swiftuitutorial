@@ -68,7 +68,7 @@ struct ContentView: View {
                 Text("Recuerda: Dentro de un stack solo puedes colocar 10 elementos")
                     .font(.system(size: 16, weight: .bold, design: .default))
                     .foregroundColor(.red)
-                    .padding()
+                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 30, trailing: 40))
             }
             .padding(5)
             
