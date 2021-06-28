@@ -9,8 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(alignment: .center, spacing: 0, content: {
+            Text("Introducción a Swift UI")
+                .font(.system(size: 26, weight: .bold, design: .default))
+                .foregroundColor(.gray)
+                .padding()
+                .frame(width: .infinity, height: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .multilineTextAlignment(.center)
+            Image("SwiftUILogo")
+                .resizable()
+                .frame(width: 64, height: 64, alignment: .center)
+            Divider()
+                .background(Color.gray)
+                .padding()
+            Text("Ingrese su nombre:")
+                .font(.system(size: 16, weight: .regular, design: .default))
+                .foregroundColor(.gray)
+                .padding()
+                .frame(width: .infinity, height: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .multilineTextAlignment(.center)
+            
+            Text("¡Bienvenido a la sesión!")
+                .font(.system(size: 18, weight: .bold, design: .default))
+                .foregroundColor(.gray)
+                .padding()
+                .frame(width: .infinity, height: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .multilineTextAlignment(.center)
+            Divider()
+                .background(Color.gray)
+                .padding()
+            
+            HStack {
+                Image("advertencia")
+                    .resizable()
+                    .frame(width: 32, height: 32, alignment: .center)
+                
+                Text("Recuerda: Dentro de un stack solo puedes colocar 10 elementos")
+                    .font(.system(size: 16, weight: .bold, design: .default))
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            .padding(5)
+            
+        })
+        .background(Color(red: 255/255, green: 225/255, blue: 156/255, opacity: 0.5))
+        .cornerRadius(30.0)
+        .padding(30)
     }
 }
 
