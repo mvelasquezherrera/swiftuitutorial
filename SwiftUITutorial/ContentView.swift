@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var txtNombre: String = ""
+    @State var nombre: String = ""
+    
     var body: some View {
         VStack(alignment: .center, spacing: 0, content: {
             Text("Introducción a Swift UI")
@@ -29,7 +33,24 @@ struct ContentView: View {
                 .frame(width: .infinity, height: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
             
-            Text("¡Bienvenido a la sesión!")
+            TextField("Nombre...", text: $txtNombre)
+                .padding()
+                .background(Color(red: 255/255, green: 255/255, blue: 255/255, opacity: 0.5))
+                .cornerRadius(20)
+                .padding(20)
+            
+            Button(action: {
+                nombre = txtNombre
+            }, label: {
+                Text("Mostrar")
+            })
+            .padding()
+            .background(Color(red: 32/255, green: 30/255, blue: 80/255))
+            .foregroundColor(.white)
+            .font(.system(size: 16, weight: .bold, design: .default))
+            .cornerRadius(20)
+            
+            Text("¡Bienvenido a la sesión \(nombre)!")
                 .font(.system(size: 18, weight: .bold, design: .default))
                 .foregroundColor(.gray)
                 .padding()
@@ -52,9 +73,11 @@ struct ContentView: View {
             .padding(5)
             
         })
+        .padding(20)
         .background(Color(red: 255/255, green: 225/255, blue: 156/255, opacity: 0.5))
         .cornerRadius(30.0)
         .padding(30)
+
     }
 }
 
